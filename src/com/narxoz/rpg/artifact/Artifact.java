@@ -1,11 +1,5 @@
 package com.narxoz.rpg.artifact;
 
-/**
- * Base type for all vault artifacts.
- *
- * Concrete artifact types remain simple data holders and forward visitation
- * through the {@link ArtifactVisitor} double-dispatch entry point.
- */
 public abstract class Artifact {
 
     private final String name;
@@ -21,7 +15,6 @@ public abstract class Artifact {
     public String getName() {
         return name;
     }
-
     public int getValue() {
         return value;
     }
@@ -29,11 +22,5 @@ public abstract class Artifact {
     public int getWeight() {
         return weight;
     }
-
-    /**
-     * Accepts a visitor.
-     *
-     * @param visitor the visitor to dispatch to
-     */
     public abstract void accept(ArtifactVisitor visitor);
 }
